@@ -1,101 +1,162 @@
-# Task 1 - Basic Network Scanning with Nmap
+Task 1: Basic Network Scanning with Nmap
 
-## Overview
+Objective
 
-As part of my Cybersecurity Internship at Oasis Infobyte, I performed a basic network scan using Nmap to identify open ports and services running on my local machine.
-Network scanning is one of the first steps in security assessment because it helps identify which services are accessible and may potentially become attack points if not properly secured.
+The objective of this task was to perform a network scan using Nmap to identify open ports and running services on a target system. The task helps in understanding how network reconnaissance is performed and how exposed services can be identified during a security assessment.
 
-## Objective
+---
 
-The main objective of this task was to:
-* Learn how to use Nmap for network reconnaissance.
-* Identify open ports on a system.
-* Detect services running on those ports.
-* Analyze the security implications of the discovered services.
+About Nmap
 
-## Tool Used
+Nmap (Network Mapper) is an open-source network scanning and security auditing tool used by cybersecurity professionals to discover hosts, identify open ports, detect running services, and gather information about systems connected to a network.
 
-* Nmap 7.99
-* Windows 11 Pro
-* Command Prompt
+Network scanning is often the first step in security analysis because it provides visibility into the services that are exposed and potentially accessible to attackers.
 
-## Scan Performed
+---
 
-To identify running services and open ports, I executed the following command:
+Environment Used
 
-```bash
+Component| Details
+Operating System| Windows 11 Pro
+Tool Used| Nmap 7.99
+Target| localhost (127.0.0.1)
+Scan Type| Service Version Detection
+
+---
+
+Methodology
+
+Step 1: Verify Nmap Installation
+
+The installation was verified using:
+
+nmap --version
+
+This confirmed that Nmap was successfully installed and ready for use.
+
+Step 2: Perform Network Scan
+
+A service version detection scan was performed using:
+
 nmap -sV localhost
-```
 
-The `-sV` option enables service version detection, allowing Nmap to identify the services running behind open ports.
+The purpose of using the "-sV" option was to identify both open ports and the services running on those ports.
 
-## Scan Results
+Step 3: Save Scan Results
 
-The scan was performed on my local machine (localhost). Nmap identified the following open ports and services:
+The scan output was saved into a text file for documentation and future reference.
 
-| Port | Service        | Description                          |
-| ---- | -------------- | ------------------------------------ |
-| 80   | HTTP           | Microsoft HTTP API service           |
-| 135  | MSRPC          | Microsoft Remote Procedure Call      |
-| 445  | Microsoft-DS   | SMB file and printer sharing service |
-| 1433 | MS-SQL-S       | Microsoft SQL Server                 |
-| 1434 | MS-SQL-S       | SQL Server Browser Service           |
-| 2383 | MS-OLAP4       | SQL Server Analysis Services         |
-| 7070 | SSL/RealServer | SSL-enabled service                  |
+nmap -sV localhost > nmap_scan_results.txt
 
-## Analysis
+---
 
-### Port 80 - HTTP
+Scan Results
 
-This port is commonly used for web services. The scan detected Microsoft's HTTP API service running on the system. Any web service exposed on a network should be monitored and updated regularly to reduce security risks.
+The scan successfully identified seven open TCP ports on the local machine.
 
-### Port 135 - MSRPC
+Port|State| Service
+80  | Open| HTTP
+135 | Open| MSRPC
+445 | Open| Microsoft-DS
+1433| Open| MS-SQL-S
+1434| Open| MS-SQL-S
+2383| Open| MS-OLAP4
+7070| Open| SSL/RealServer
 
-This service is used internally by Windows for communication between applications and services. Although necessary for many Windows functions, it should not be unnecessarily exposed to untrusted networks.
+The host was active and responded successfully during the scan.
 
-### Port 445 - SMB
+---
 
-Port 445 is used for file and printer sharing in Windows environments. Since SMB has been targeted in several major cyberattacks, it is important to secure and monitor this service.
+Analysis of Discovered Services
 
-### Ports 1433 and 1434 - SQL Server
+Port 80 - HTTP
 
-These ports indicate that Microsoft SQL Server services are active on the system. Database services often store important information, making proper authentication and access control essential.
+Port 80 is commonly used for web-based communication. Nmap detected Microsoft's HTTP API service running on this port. Any web service exposed on a system should be regularly monitored and updated to prevent potential security issues.
 
-### Port 2383
+Port 135 - Microsoft RPC
 
-This port is associated with Microsoft SQL Server Analysis Services, which is used for data analysis and reporting functions.
+This port is used by the Remote Procedure Call service in Windows environments. It allows communication between applications and system components. While necessary for many Windows functions, unrestricted access can increase the attack surface of the system.
 
-### Port 7070
+Port 445 - SMB (Server Message Block)
 
-Nmap detected an SSL-enabled service on this port. Additional investigation would be required to determine its exact purpose and whether it is required for normal system operations.
+Port 445 is responsible for file and printer sharing services within Windows networks. SMB has historically been targeted by attackers and ransomware campaigns, making it one of the most sensitive ports from a security perspective.
 
-## Security Recommendations
+Port 1433 - Microsoft SQL Server
 
-Based on the scan results, I would recommend the following:
-* Disable services that are not required.
-* Keep Windows and installed applications updated.
-* Restrict access to SMB services where possible.
-* Use strong authentication for SQL Server instances.
-* Regularly monitor open ports and network services.
-* Configure firewall rules to limit unnecessary exposure.
+This port is used by Microsoft SQL Server to handle database connections. Since databases often contain critical information, securing access to this service is important.
 
-## What I Learned
+Port 1434 - SQL Server Browser
+
+The SQL Server Browser service helps clients locate SQL Server instances. While useful for database connectivity, it can reveal information about database services running on a system.
+
+Port 2383 - SQL Server Analysis Services
+
+This service is associated with data analysis and business intelligence functions provided by Microsoft SQL Server.
+
+Port 7070 - SSL Enabled Service
+
+An SSL/TLS protected service was detected on port 7070. Additional investigation would be required to determine the exact application using this port and whether it is necessary for system operations.
+
+---
+
+Security Observations
+
+During the scan, several Microsoft services were identified. The presence of SQL Server services indicates that database-related applications are installed on the system.
+
+The most security-sensitive service identified during the scan is SMB on port 445, as it has historically been associated with various network-based attacks when improperly configured.
+
+The SQL Server ports should also be protected through strong authentication and limited network exposure.
+
+---
+
+Recommendations
+
+Based on the scan results, the following recommendations are suggested:
+
+- Regularly review open ports and running services.
+- Disable unnecessary services whenever possible.
+- Restrict SMB access using firewall rules.
+- Ensure Microsoft SQL Server services are protected using strong credentials.
+- Keep the operating system and applications updated with security patches.
+- Conduct periodic network scans to identify unexpected service exposure.
+
+---
+
+Learning Outcomes
 
 Through this task, I gained practical experience in:
-* Installing and using Nmap.
-* Performing basic network reconnaissance.
-* Identifying open ports and active services.
-* Understanding the purpose of common Windows network services.
-* Analyzing potential security risks associated with exposed services.
 
-## Conclusion
+- Installing and configuring Nmap
+- Performing basic network reconnaissance
+- Identifying open ports and active services
+- Understanding the purpose of common Windows network services
+- Interpreting network scan results
+- Performing a basic security assessment
 
-This task provided a practical introduction to network scanning and service enumeration using Nmap. The scan successfully identified several active services running on my system, including web, file-sharing, and database-related services.
-Performing regular scans helps security professionals understand the attack surface of a system and identify services that may require additional security controls. This exercise improved my understanding of basic network security assessment techniques and the importance of monitoring exposed services.
+---
 
-## Author
+Conclusion
+
+This task provided hands-on experience with one of the most widely used cybersecurity tools, Nmap. By performing a service detection scan on the local machine, I was able to identify active services and understand their role within the system.
+
+The exercise demonstrated the importance of network reconnaissance in cybersecurity and highlighted how open ports contribute to a system's attack surface. Regular network scanning and service analysis are essential practices for maintaining a secure environment.
+
+---
+
+Repository Structure
+
+Task1_Basic_Network_Scanning_Nmap/
+│
+├── README.md
+├── nmap_scan_results.txt
+└── screenshots/
+    ├── 01_nmap_version.png
+    ├── 02_nmap_scan_results.png
+    └── 03_saved_scan_output.png
+
+---
+
+Author:
 
 Ayinaparthi Rohith
-Cybersecurity Intern
-Oasis Infobyte
-
+Oasis Infobyte Security Analyst Intern

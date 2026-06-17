@@ -1,0 +1,17 @@
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-06-15 19:54 +0530
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000015s latency).
+Other addresses for localhost (not scanned): ::1
+Not shown: 993 closed tcp ports (reset)
+PORT     STATE SERVICE         VERSION
+80/tcp   open  http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+135/tcp  open  msrpc           Microsoft Windows RPC
+445/tcp  open  microsoft-ds    Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+1433/tcp open  ms-sql-s        Microsoft SQL Server 2012 11.00.2100; RTM
+1434/tcp open  ms-sql-s        Microsoft SQL Server 2012 11.00.2100; RTM
+2383/tcp open  ms-olap4?
+7070/tcp open  ssl/realserver?
+Service Info: Host: RISHIROHITH; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 41.53 seconds

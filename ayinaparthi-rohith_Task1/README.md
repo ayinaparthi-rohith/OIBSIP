@@ -24,7 +24,7 @@ Nmap was downloaded and installed successfully on the system.
 The following command was executed to verify that Nmap was installed correctly:
 
 ```bash
-nmap --version
+>> nmap --version
 ```
 
 ### Step 3: Perform Network Scan
@@ -32,7 +32,7 @@ nmap --version
 A service version detection scan was performed on the local machine using the following command:
 
 ```bash
-nmap -sV localhost
+>> nmap -sV localhost
 ```
 
 The `-sV` option enables service detection and attempts to identify the services running on open ports.
@@ -42,10 +42,10 @@ The `-sV` option enables service detection and attempts to identify the services
 The output of the scan was saved into a text file named:
 
 ```text
-nmap_scan_results.txt
+>> nmap_scan_results.txt
 ```
 
----
+
 
 ## Scan Results
 
@@ -61,7 +61,7 @@ The scan successfully identified the following open ports and services on the lo
 | 2383 | MS-OLAP4       | SQL Server Analysis Services            |
 | 7070 | SSL/RealServer | SSL-enabled service                     |
 
----
+
 
 ## Analysis of Findings
 
@@ -93,7 +93,7 @@ This port is associated with SQL Server Analysis Services, which are commonly us
 
 An SSL-enabled service was detected on this port. Additional investigation would be required to determine the exact application using this service.
 
----
+
 
 ## Key Observations
 
@@ -104,7 +104,7 @@ An SSL-enabled service was detected on this port. Additional investigation would
 * A web service was active on port 80.
 * An SSL-protected service was detected on port 7070.
 
----
+
 
 ## Learning Outcomes
 
@@ -127,22 +127,20 @@ Task1_Basic_Network_Scanning_Nmap/
 ├── README.md
 ├── nmap_scan_results.txt
 └── screenshots/
-    ├── 01_nmap_version.png
-    ├── 02_nmap_scan_results.png
-    └── 03_saved_scan_output.png
-```
+    ├── nmap_version.png
+    ├── nmap_scan_results.png
+    └── saved_scan_output.png
 
----
 
 ## Conclusion
 
 This task successfully demonstrated the use of Nmap for network scanning and service identification. The scan helped identify active services running on the local machine and provided insight into how network reconnaissance is performed during a basic security assessment. The exercise improved my understanding of open ports, service detection, and the importance of regularly monitoring exposed services.
 
----
+
 
 ### Author
 
 **Ayinaparthi Rohith**
-
 Security Analyst Intern
+
 Oasis Infobyte

@@ -142,5 +142,4 @@ This task successfully demonstrated the use of Nmap for network scanning and ser
 
 **Ayinaparthi Rohith**
 Security Analyst Intern
-
 Oasis Infobyte

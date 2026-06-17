@@ -4,14 +4,12 @@
 
 The objective of this task was to perform a network scan using Nmap to identify open ports and running services on a local machine. The task also involved analyzing the discovered services and understanding their significance from a security perspective.
 
-
 ## Tools Used
 
 * Nmap 7.99
 * Windows 11 Pro
 * Command Prompt (CMD)
 
----
 
 ## Task Execution
 
@@ -44,9 +42,6 @@ The output of the scan was saved into a text file named:
 ```text
 >> nmap_scan_results.txt
 ```
-
-
-
 ## Scan Results
 
 The scan successfully identified the following open ports and services on the local machine:
@@ -94,7 +89,6 @@ This port is associated with SQL Server Analysis Services, which are commonly us
 An SSL-enabled service was detected on this port. Additional investigation would be required to determine the exact application using this service.
 
 
-
 ## Key Observations
 
 * The target machine was active and reachable.
@@ -103,7 +97,6 @@ An SSL-enabled service was detected on this port. Additional investigation would
 * SMB file-sharing services were enabled.
 * A web service was active on port 80.
 * An SSL-protected service was detected on port 7070.
-
 
 
 ## Learning Outcomes
@@ -117,7 +110,6 @@ Through this task, I gained practical experience in:
 * Analyzing network scan results
 * Documenting findings in a structured manner
 
----
 
 ## Files Included
 
@@ -135,7 +127,6 @@ Task1_Basic_Network_Scanning_Nmap/
 ## Conclusion
 
 This task successfully demonstrated the use of Nmap for network scanning and service identification. The scan helped identify active services running on the local machine and provided insight into how network reconnaissance is performed during a basic security assessment. The exercise improved my understanding of open ports, service detection, and the importance of regularly monitoring exposed services.
-
 
 
 ### Author

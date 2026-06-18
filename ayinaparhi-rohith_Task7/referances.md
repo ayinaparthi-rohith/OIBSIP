@@ -24,7 +24,6 @@ The following sources were used for researching network security threats, attack
 
    * https://www.cisecurity.org
 
----
 
 ## Threat Intelligence and Security Resources
 
@@ -48,7 +47,6 @@ The following sources were used for researching network security threats, attack
 
     * https://www.paloaltonetworks.com/cyberpedia
 
----
 
 ## Research and Educational Resources
 
@@ -72,7 +70,6 @@ The following sources were used for researching network security threats, attack
 
     * https://www.fortinet.com/resources
 
----
 
 ## Real-World Incident References
 
@@ -96,7 +93,6 @@ The following sources were used for researching network security threats, attack
 
     * https://security.googleblog.com
 
----
 
 ## Reference Usage
 

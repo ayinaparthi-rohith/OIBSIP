@@ -4,7 +4,6 @@
 
 The objective of this task is to research and understand common network security threats that can affect computer systems, networks, and organizations. This study focuses on how these threats work, their impact on security, and the methods used to prevent and mitigate them.
 
----
 
 # Introduction
 
@@ -19,7 +18,6 @@ This task focuses on four major network security threats:
 * Man-in-the-Middle (MITM) Attacks
 * Spoofing Attacks
 
----
 
 # Importance of Network Security
 
@@ -41,7 +39,6 @@ Ensuring that systems, applications, and services remain available to legitimate
 
 A failure to maintain these principles can lead to financial losses, operational disruption, and damage to an organization's reputation.
 
----
 
 # Network Security Threats Covered
 

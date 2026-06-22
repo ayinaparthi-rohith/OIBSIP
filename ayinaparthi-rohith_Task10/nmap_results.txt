@@ -1,1 +1,42 @@
+# Nmap 7.99 scan initiated Mon Jun 22 19:52:39 2026 as: nmap -sV -oN nmap_results.txt 192.168.1.0/24
+Nmap scan report for 192.168.1.1
+Host is up (0.0070s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT    STATE    SERVICE    VERSION
+21/tcp  open     ftp        GNU Inetutils FTPd 1.9.4
+22/tcp  open     tcpwrapped
+23/tcp  filtered telnet
+53/tcp  open     domain     dnsmasq 2.80
+80/tcp  open     tcpwrapped
+443/tcp open     tcpwrapped
+MAC Address: B8:B7:DB:E3:52:7A (Goip Global Services Pvt.)
+Service Info: Host: localhost.localdomain
+
+Nmap scan report for 192.168.1.2
+Host is up (0.020s latency).
+All 1000 scanned ports on 192.168.1.2 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 0C:F3:46:16:D5:A1 (Xiaomi Communications)
+
+Nmap scan report for 192.168.1.4
+Host is up (0.026s latency).
+All 1000 scanned ports on 192.168.1.4 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: B6:4A:02:29:AB:97 (Unknown)
+
+Nmap scan report for 192.168.1.5
+Host is up (0.0012s latency).
+Not shown: 993 closed tcp ports (reset)
+PORT     STATE SERVICE         VERSION
+80/tcp   open  http            Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+135/tcp  open  msrpc           Microsoft Windows RPC
+139/tcp  open  netbios-ssn     Microsoft Windows netbios-ssn
+445/tcp  open  microsoft-ds    Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
+1433/tcp open  ms-sql-s        Microsoft SQL Server 2012 11.00.2100; RTM
+2383/tcp open  ms-olap4?
+7070/tcp open  ssl/realserver?
+Service Info: Host: RISHIROHITH; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Jun 22 19:53:39 2026 -- 256 IP addresses (4 hosts up) scanned in 59.54 seconds
 

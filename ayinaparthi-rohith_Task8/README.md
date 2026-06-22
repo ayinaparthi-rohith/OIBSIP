@@ -6,7 +6,6 @@ The objective of this task is to capture and analyze network traffic using Wires
 
 Wireshark is one of the most widely used network protocol analyzers and is commonly used by network administrators, security analysts, incident response teams, and penetration testers for monitoring and troubleshooting network activity.
 
----
 
 # Tool Used
 
